@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PagePickup : MonoBehaviour
 {
+
     [SerializeField] private GameObject page;
+    [SerializeField] private Library _library;
     private bool playerInRange = false;
 
     void Start()
@@ -32,7 +34,7 @@ public class PagePickup : MonoBehaviour
     {
         yield return new WaitUntil(() => playerInRange && Input.GetKeyDown(KeyCode.F));
         page.SetActive(true);
-        Library.AddPage();
+        _library.pagesCollected++;
         Debug.Log("Pickup");
         yield return new WaitForSeconds(0.5f);
         StartCoroutine("PickupCheck");
