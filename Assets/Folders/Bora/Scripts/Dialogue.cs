@@ -7,6 +7,7 @@ public class Dialogue : MonoBehaviour
 {
     [SerializeField] GameObject DialogueBox;
     [SerializeField] CinemachineVirtualCamera transitionCam;
+    
     bool playerInRange;
     public float dialogueWaitTime;
 
