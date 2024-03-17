@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Library : MonoBehaviour
 {
-    public int pagesCollected = 0;
+    private static int pagesCollected = 0;
     void Start()
     {
         StartCoroutine("CheckPages");
+    }
+
+    public static void AddPage()
+    {
+        pagesCollected++;
     }
 
     IEnumerator CheckPages()

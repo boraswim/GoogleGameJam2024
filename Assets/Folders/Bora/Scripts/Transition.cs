@@ -8,11 +8,13 @@ public class Transition : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera transitionCam;
     void OnTriggerEnter(Collider other)
     {
-        transitionCam.Priority = 15;
+        if(other.gameObject.CompareTag("Player"))
+            transitionCam.Priority = 15;
     }
 
     void OnTriggerExit(Collider other)
     {
-        transitionCam.Priority = 5;
+        if(other.gameObject.CompareTag("Player"))
+            transitionCam.Priority = 5;
     }
 }
