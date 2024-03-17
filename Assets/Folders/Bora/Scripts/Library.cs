@@ -8,6 +8,7 @@ public class Library : MonoBehaviour
     void Start()
     {
         StartCoroutine("CheckPages");
+        DontDestroyOnLoad(this);
     }
 
     public static void AddPage()
@@ -18,6 +19,7 @@ public class Library : MonoBehaviour
     IEnumerator CheckPages()
     {
         yield return new WaitUntil(() => pagesCollected == 3);
+        GameObject.Find("Map").SetActive(true);
         Debug.Log("All pages collected");
     }
 }

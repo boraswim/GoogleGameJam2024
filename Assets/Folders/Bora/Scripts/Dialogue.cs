@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject DialogueBox;
     [SerializeField] CinemachineVirtualCamera transitionCam;
     bool playerInRange;
+    public float dialogueWaitTime;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class Dialogue : MonoBehaviour
         yield return new WaitUntil(() => playerInRange && Input.GetKeyDown(KeyCode.F));
         transitionCam.Priority = 15;
         DialogueBox.SetActive(true);
-        yield return new WaitUntil(() => !playerInRange);
+        yield return new WaitForSeconds(dialogueWaitTime);
         transitionCam.Priority = 5;
         DialogueBox.SetActive(false);
         StartCoroutine("DialogueCheck");

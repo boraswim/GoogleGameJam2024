@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Folders/Mehmet/MehmetScene.unity
+    guid: 9b7723e04a2eadd4db9e3d06fec3ca97
+  - enabled: 1
+    path: Assets/Folders/Lutfullah/Scenes/ZindanScene.unity
+    guid: d6043e8b47f4fe848ab9b84939421fff
+  - enabled: 1
+    path: Assets/Folders/Lutfullah/Scenes/MagaraScene.unity
+    guid: c1a80328132f23f43989d3f5426518ac
+  - enabled: 1
+    path: Assets/Folders/Lutfullah/Scenes/LabirentScene.unity
+    guid: 2fe1ee9857df2e54fb76705004c18859
+  - enabled: 1
+    path: Assets/Folders/Bora/LastScene.unity
+    guid: c7b4b863b1807274a9f4c2dd9ea9c34d
   m_configObjects: {}

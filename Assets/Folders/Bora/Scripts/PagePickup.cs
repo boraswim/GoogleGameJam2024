@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PagePickup : MonoBehaviour
 {
-
-    [SerializeField] private GameObject page;
-    [SerializeField] private Library _library;
     private bool playerInRange = false;
+    public int sceneIndex = 0;
 
     void Start()
     {
         StartCoroutine("PickupCheck");
     }
-    
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
@@ -33,10 +32,11 @@ public class PagePickup : MonoBehaviour
     IEnumerator PickupCheck()
     {
         yield return new WaitUntil(() => playerInRange && Input.GetKeyDown(KeyCode.F));
-        page.SetActive(true);
-        _library.pagesCollected++;
+        Library.AddPage();
         Debug.Log("Pickup");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
+        if(sceneIndex != 9)
+            SceneManager.LoadScene(sceneIndex);
         StartCoroutine("PickupCheck");
     }
 }
