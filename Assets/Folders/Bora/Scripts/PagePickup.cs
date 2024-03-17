@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PagePickup : MonoBehaviour
 {
-    public int pageIndex;
+
     [SerializeField] private GameObject page;
     [SerializeField] private Library _library;
     private bool playerInRange = false;
